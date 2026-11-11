@@ -3,90 +3,155 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profile</title>
+  <title>Profile | จันทราภรณ์ ผาสีดา</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root { --accent: #0f8a7c; --accent-2: #1f6fd1; }
+
+    html, body { height: auto; min-height: 100%; background-attachment: fixed; }
+
+    a:hover, a:focus-visible { text-decoration: underline; }
+    a:focus-visible { outline: 3px solid rgba(31,111,209,.35); outline-offset: 3px; border-radius: 4px; }
+
+    /* รูปภาพ: ไม่ล้นจอมือถือ */
+    img { max-width: 100%; height: auto; border-radius: 12px; display: block; margin: 12px auto; }
+    .profile-photo { width: 220px; height: 220px; object-fit: cover; border-radius: 50%;
+      border: 4px solid #fff; box-shadow: 0 8px 22px rgba(24,169,153,.2); margin: 6px auto 18px; }
+    .shot { box-shadow: 0 6px 18px rgba(16,42,67,.12); width: 100%; max-width: 600px; }
+
+
+    .info { display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px;
+      text-align: left; max-width: 640px; margin: 14px auto 0; }
+    .info dt { font-weight: 700; color: var(--accent); }
+    .info dd { margin: 0; }
+    @media (max-width: 560px) {
+      .info { grid-template-columns: 1fr; gap: 0; }
+      .info dd { margin-bottom: 10px; }
+    }
+
+    .tags { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .tags li { background: #e6f6f4; color: #0b5f55; padding: 4px 12px; border-radius: 999px; font-size: .92rem; }
+
+    .work { margin-top: 22px; }
+    .work h3 { margin: 0 0 4px; font-size: 1.05rem; }
+    .work + .work { padding-top: 22px; border-top: 1px solid rgba(16,42,67,.08); }
+
+    .card ul.plain { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-direction: column; gap: 10px; }
+    .card h2 { line-height: 1.4; }
+    .card p { margin: 6px 0; }
+
+    @media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } }
+  </style>
 </head>
 <body>
-    <center>
   <div class="container">
     <header>
       <h1>Profile</h1>
-      <p>Portfolio & Introduction</p>
+      <p>Portfolio &amp; Introduction</p>
     </header>
 
     <!-- 1. แนะนำตัว -->
     <section class="card" id="profile">
       <h2>1. แนะนำตัว (Introduction / Profile)</h2>
-        <p>- รูปโปรไฟล์</p>
-        <p><img src="PIC_Jantharaporn-05/41257acd-cdc1-4672-b022-f93fab77c9a5.jpg" alt="" width="400" height="400s"></p>
-        <p><strong>- ชื่อ–นามสกุล </strong>: จันทราภรณ์ ผาสีดา (Jantharaporn Phaseeda)</p>
-        <p><strong>- ชื่อเล่น </strong>: แพรว (Pawe)</p>
-        <p><strong>- มหาวิทยาลัย </strong>: ราชภัฏอุดรธานี</p>
-        <p><strong>- คณะ </strong>: วิทยาศาสตร์</p>
-        <p><strong>- สาขา </strong>: เทคโนโลยีสารสนเทศ (information technology)</p>
-        <p><strong>- ปีการศึกษา </strong>: ชั้นปีที่ 3</p>
-        <p><strong>- ความสนใจเฉพาะทาง </strong>คือ AI, Web Dev, Cybersecurity</p>
+      <img class="profile-photo" src="PIC_Jantharaporn-05/41257acd-cdc1-4672-b022-f93fab77c9a5.jpg" alt="รูปโปรไฟล์ จันทราภรณ์ ผาสีดา">
+      <dl class="info">
+        <dt>ชื่อ–นามสกุล</dt><dd>จันทราภรณ์ ผาสีดา (Jantharaporn Phaseeda)</dd>
+        <dt>ชื่อเล่น</dt><dd>แพรว (Pawe)</dd>
+        <dt>มหาวิทยาลัย</dt><dd>ราชภัฏอุดรธานี</dd>
+        <dt>คณะ</dt><dd>วิทยาศาสตร์</dd>
+        <dt>สาขา</dt><dd>เทคโนโลยีสารสนเทศ (Information Technology)</dd>
+        <dt>ชั้นปี</dt><dd>ชั้นปีที่ 3</dd>
+        <dt>ความสนใจ</dt><dd>AI, Web Dev, Cybersecurity</dd>
+      </dl>
     </section>
 
     <!-- 2. ทักษะ -->
     <section class="card" id="skills">
       <h2>2. ทักษะ (Skills)</h2>
-        <p><strong>- Programming</strong>: Java, HTML/CSS, JavaScript, ภาษา C</p>
-        <p><strong>- AI & Data</strong>: SQL, Gemini</p>
-        <p><strong>- Tools</strong>: Github, Visual studio Code, Figma</p>
-        <p><strong>- Soft Skills:</strong> การสื่อสาร, การทำงานเป็นทีม, การแก้ปัญหา, การตรงต่อเวลา</p>
+      <dl class="info">
+        <dt>Programming</dt>
+        <dd><ul class="tags"><li>Java</li><li>HTML/CSS</li><li>JavaScript</li><li>ภาษา C</li></ul></dd>
+        <dt>AI &amp; Data</dt>
+        <dd><ul class="tags"><li>SQL</li><li>Gemini</li></ul></dd>
+        <dt>Tools</dt>
+        <dd><ul class="tags"><li>GitHub</li><li>Visual Studio Code</li><li>Figma</li></ul></dd>
+        <dt>Soft Skills</dt>
+        <dd><ul class="tags"><li>การสื่อสาร</li><li>การทำงานเป็นทีม</li><li>การตรงต่อเวลา</li></ul></dd>
+      </dl>
     </section>
 
     <!-- 3. ผลงาน -->
     <section class="card" id="projects">
       <h2>3. ผลงานที่ผ่านมา (Projects / Portfolio)</h2>
-        <p><strong>- เว็บไซต์ที่เคยพัฒนา </strong>: <a href="file:///D:/jantharapornn/index1.html">เว็บไซต์แนะนำเครื่องดนตรีไทย</a></p>
-        <img src="PIC_Jantharaporn-05/Screenshot 2025-11-13 102851.png" alt="" width="400" height="400s"></p>
-        <p><strong>- ออกแบบ Figma เกี่ยวกับ แอปขายรองเท้าแบรนด์</strong>: <a href="https://surl.li/mfjrfq">แอปขายรองเท้าแบรนด์</a></p>
-        <p><img src="PIC_Jantharaporn-05/Screenshot 2025-11-13 104132.png" alt="" width="400" height="400s"></p>
+
+      <div class="work">
+        <h3>เว็บไซต์แนะนำเครื่องดนตรีไทย</h3>
+        <!-- เปลี่ยนเป็นลิงก์ GitHub Pages เมื่ออัปโหลดแล้ว -->
+        <p><a href="index1.html">เปิดดูเว็บไซต์</a></p>
+        <img class="shot" src="PIC_Jantharaporn-05/Screenshot%202025-11-13%20102851.png" alt="ภาพหน้าจอเว็บไซต์แนะนำเครื่องดนตรีไทย">
+      </div>
+
+      <div class="work">
+        <h3>ออกแบบ Figma: แอปขายรองเท้าแบรนด์</h3>
+        <p><a href="https://surl.li/mfjrfq" target="_blank" rel="noopener">ดูงานออกแบบใน Figma</a></p>
+        <img class="shot" src="PIC_Jantharaporn-05/Screenshot%202025-11-13%20104132.png" alt="ภาพงานออกแบบ Figma แอปขายรองเท้าแบรนด์">
+      </div>
     </section>
 
     <!-- 4. การศึกษา -->
     <section class="card" id="education">
       <h2>4. ประวัติการศึกษา (Education)</h2>
-      <p><strong>โรงเรียนมารีย์พิทักษ์เซกา 2560-2563</p>
-      <p>โรงเรียนมัธยมเซกา 2564-2566</p>
-      <p>ปัจจุบันศึกษาที่ : คณะวิทยาศาสตร์ สาขาเทคโนโลยีสารสนเทศ<br>
-      มหาวิทยาลัยราชภัฏอุดรธานี</strong></p>
+      <dl class="info">
+        <dt>2560–2563</dt><dd>โรงเรียนมารีย์พิทักษ์เซกา</dd>
+        <dt>2564–2566</dt><dd>โรงเรียนมัธยมเซกา</dd>
+        <dt>ปัจจุบัน</dt><dd>คณะวิทยาศาสตร์ สาขาเทคโนโลยีสารสนเทศ<br>มหาวิทยาลัยราชภัฏอุดรธานี</dd>
+      </dl>
     </section>
 
     <!-- 5. กิจกรรม -->
     <section class="card" id="activities">
       <h2>5. กิจกรรมและผลงานอื่น ๆ (Activities / Achievements)</h2>
-      <p><strong>- ผู้เข้าร่วมการอบรม “การประยุกต์การใช้งาน Dashboard เพื่อความมั่นคงปลอดภัย”</strong></p>
-      <p><img src="PIC_Jantharaporn-05/535111685_1548387039480572_6134099334212713860_n.jpg" alt="" width="600" height="400s"></p>
-      <p><strong>- เข้าร่วมแข่งขันแสตนเชียร์ กีฬาวังแดงเกมส์ ครั้งที่ 34</strong></p>
-      <p><img src="PIC_Jantharaporn-05/56faa036-5af9-452c-b5e9-94971b2321fa.jpg" alt="" width="600" height="400s"></p>
-      <p><strong>- certificate เรื่อง Cybersecurity</strong></p>
-      <p><img src="PIC_Jantharaporn-05/Introduction_to_Cybersecurity_certificate_67040233119-udru-ac-th_876c3405-544a-4a7a-b60f-2eab29274421_page-0001.jpg" alt="" width="600" height="400s"></p>
+
+      <div class="work">
+        <h3>ผู้เข้าร่วมการอบรม “การประยุกต์การใช้งาน Dashboard เพื่อความมั่นคงปลอดภัย”</h3>
+        <img class="shot" src="PIC_Jantharaporn-05/535111685_1548387039480572_6134099334212713860_n.jpg" alt="ภาพการอบรมการประยุกต์ใช้งาน Dashboard เพื่อความมั่นคงปลอดภัย">
+      </div>
+
+      <div class="work">
+        <h3>เข้าร่วมแข่งขันแสตนเชียร์ กีฬาวังแดงเกมส์ ครั้งที่ 34</h3>
+        <img class="shot" src="PIC_Jantharaporn-05/56faa036-5af9-452c-b5e9-94971b2321fa.jpg" alt="ภาพการแข่งขันแสตนเชียร์ กีฬาวังแดงเกมส์ ครั้งที่ 34">
+      </div>
+
+      <div class="work">
+        <h3>Certificate: Introduction to Cybersecurity</h3>
+        <img class="shot" src="PIC_Jantharaporn-05/Introduction_to_Cybersecurity_certificate_67040233119-udru-ac-th_876c3405-544a-4a7a-b60f-2eab29274421_page-0001.jpg" alt="ใบประกาศนียบัตร Introduction to Cybersecurity">
+      </div>
     </section>
 
     <!-- 6. ติดต่อ -->
     <section class="card" id="contact">
       <h2>6. ติดต่อ (Contact)</h2>
-        <p>📧 Email: 67040233119@udru.ac.th</p>
-        <p>🌐 GitHub: <a href="https://github.com/Jantharaporn-05" target="_blank">https://github.com/Jantharaporn</a></p>
-        <p>💼 Facebook: <a href="https://www.facebook.com/jantharaporn.phaseeda">Facebook</a></p>
-        <p>🏠 ที่อยู่จังหวัด: 238 หมู่ 10 อ.เซกา จ.บึงกาฬ 38150</p>
+      <dl class="info">
+        <dt>📧 Email</dt><dd><a href="mailto:67040233119@udru.ac.th">67040233119@udru.ac.th</a></dd>
+        <dt>🌐 GitHub</dt><dd><a href="https://github.com/Jantharaporn-05" target="_blank" rel="noopener">github.com/Jantharaporn-05</a></dd>
+        <dt>💼 Facebook</dt><dd><a href="https://www.facebook.com/jantharaporn.phaseeda" target="_blank" rel="noopener">jantharaporn.phaseeda</a></dd>
+        <dt>🏠 จังหวัด</dt><dd>238 หมู่ 10 อำเภอเซกา จังหวัดบึงกาฬ</dd>
+      </dl>
     </section>
 
     <!-- 7. เป้าหมาย -->
     <section class="card" id="goals">
-      <h2>7. องค์ประกอบเสริม</h2>
-      <p>เป้าหมายในอนาคต และ Career Interest</p>
-      <p>เป้าหมายในอนาคจอยากเป็น: Web Developer หรือ AI Engineer</p>
-      <p>ความสนใจ: สนใจในการเขียนโปรแกรมภาษา Java อยากเรียนรู้ให้เข้าใจมากยิ่งขึ้นเพื่อการทำงานในอนาคต</p>
+      <h2>7. เป้าหมายในอนาคต และ Career Interest</h2>
+      <dl class="info">
+        <dt>เป้าหมาย</dt><dd>Web Developer หรือ AI Engineer</dd>
+        <dt>ความสนใจ</dt><dd>สนใจการเขียนโปรแกรมภาษา Java อยากเรียนรู้ให้เข้าใจมากยิ่งขึ้นเพื่อใช้ทำงานในอนาคต</dd>
+      </dl>
     </section>
 
     <footer>
       © 2025 Portfolio Jantharaporn
     </footer>
   </div>
-  </center>
 </body>
 </html>
